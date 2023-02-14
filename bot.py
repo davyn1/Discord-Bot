@@ -10,9 +10,9 @@ import lightbulb
 
 
 # instantiate a bot and run it
-bot = lightbulb.BotApp(token='MTAwNzgxNTY4MjM1Mzc5OTIzOQ.G8yYAw.9GXvICOVSVedw9QcSy-v4q_8svjEOx7Hewnj9I',
+bot = lightbulb.BotApp(token='Insert personal token here',
                        default_enabled_guilds=1007816405246279740
-                       )
+                       ) 
 
 
 @bot.listen(hikari.StartedEvent)

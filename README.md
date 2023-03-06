@@ -13,3 +13,4 @@ To-Do List:
 - [ ] Build a game to be played inside Discord
 - [x] Figure out Spotify using Python
 - [ ] Integrate Spotify player with Discord bot
+- [ ] How to commit to Git without exposing auth keys.

@@ -1,23 +1,18 @@
-# install necessary packages when run in an environment
-from pip._internal import main as pipmain
-
-pipmain(['install', 'hikari'])
-pipmain(['install', 'hikari-lightbulb'])
-
 # import necessary packages
 import hikari
 import lightbulb
 
 
-# instantiate a bot and run it
-bot = lightbulb.BotApp(token='Insert personal token here',
-                       default_enabled_guilds=1007816405246279740
-                       ) 
+# Instantiate a bot and run it
+## Token taken from Spotify Dev Portal
+## Guilds are IDS of servers
+bot = lightbulb.BotApp(token='MTAwNzgxNTY4MjM1Mzc5OTIzOQ.Gp3eRO.7A1KrogkLcFIjlEQKEqhZGQQSaqE-dnD8-OU3U',
+                       default_enabled_guilds=1007816405246279740)
 
 
 @bot.listen(hikari.StartedEvent)
 async def on_started(event):
-    print('Bot has started!')
+    print('Kermit Is Online!')
 
 
 @bot.command
@@ -41,5 +36,5 @@ async def add(ctx):
     await ctx.respond(ctx.options.num1 + ctx.options.num2)
 
 
-bot.load_extensions_from('./extensions')
+bot.load_extensions_from('./Extension_Storage')
 bot.run()

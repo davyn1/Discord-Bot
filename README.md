@@ -5,6 +5,7 @@
 2. Interact with user
 3. Play a game
 4. Listen to music
+
 To-Do List:
 ---
 - [x] Create functional responsive Discord bot

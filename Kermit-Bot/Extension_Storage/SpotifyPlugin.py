@@ -3,15 +3,14 @@ import hikari
 import lightbulb
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-
+import id
 
 plugin = lightbulb.Plugin('Example')
 # Spotify API authentication using a token
-sp_oauth = SpotifyOAuth(client_id='89cf0c7b0c784ad2b48969275e12daf9',
-                     client_secret='3c0b82b1f1e144adbdf5a0d8ae28ac95',
-                     redirect_uri='https://www.google.com/callback/',
-                     scope='user-read-playback-state user-modify-playback-state')
-
+sp_oauth = SpotifyOAuth(client_id=id.spotify_id,
+                        client_secret=id.client_secret,
+                        redirect_uri='https://www.google.com/callback/',
+                        scope='user-read-playback-state user-modify-playback-state')
 
 token_info = sp_oauth.get_access_token()
 if sp_oauth.is_token_expired(token_info):

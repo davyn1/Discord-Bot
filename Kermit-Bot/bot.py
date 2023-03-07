@@ -1,12 +1,13 @@
 # import necessary packages
 import hikari
 import lightbulb
+import token
 
 
 # Instantiate a bot and run it
 ## Token taken from Spotify Dev Portal
 ## Guilds are IDS of servers
-bot = lightbulb.BotApp(token='MTAwNzgxNTY4MjM1Mzc5OTIzOQ.Gp3eRO.7A1KrogkLcFIjlEQKEqhZGQQSaqE-dnD8-OU3U',
+bot = lightbulb.BotApp(token=token.discord_token,
                        default_enabled_guilds=1007816405246279740)
 
 

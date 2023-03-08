@@ -6,23 +6,28 @@ from spotipy.oauth2 import SpotifyOAuth
 import id
 
 plugin = lightbulb.Plugin('Example')
-# Spotify API authentication using a token
+# Spotify API authentication using a spotify user information
+# Redirect URI for music player
+# Scope indicates the permission settings
 sp_oauth = SpotifyOAuth(client_id=id.spotify_id,
                         client_secret=id.client_secret,
                         redirect_uri='https://www.google.com/callback/',
                         scope='user-read-playback-state user-modify-playback-state')
 
+# convert into token
 token_info = sp_oauth.get_access_token()
 if sp_oauth.is_token_expired(token_info):
     token_info = sp_oauth.refresh_access_token(token_info['refresh_token'])
 sp = spotipy.Spotify(auth=token_info['access_token'])
 
 
+# Receive user input
 @plugin.listener(hikari.GuildMessageCreateEvent)
 async def print_messages(event):
     print(event.content)
 
 
+# Basic test extension
 @plugin.command
 @lightbulb.command('ping', 'Says pong!')
 @lightbulb.implements(lightbulb.SlashCommand)
